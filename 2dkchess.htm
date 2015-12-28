@@ -15,7 +15,7 @@ function connect(cb){
     if('WebSocket' in window){
         if(cf)return; else cf=true;
         //ws=new WebSocket('ws://localhost:8080/2dkchess.htm'); log.innerHTML+='Connecting...\n';
-        ws=new WebSocket('ws://4c635778.ngrok.io/:8080/2dkchess.htm'); log.innerHTML+='Connecting...\n';
+        ws=new WebSocket('wss://4c635778.ngrok.io/:8080/2dkchess.htm'); log.innerHTML+='Connecting...\n';
         ws.onopen=function(e){log.innerHTML+='Connected.\n'; cb();};
         ws.onclose=function(e){log.innerHTML+='You or your King have been slain. Select a piece to reconnect.\n'; cf=false; me=0; o={}; dragged=null; timer.innerHTML='&nbsp;'; clearInterval(ticktimer);};
         ws.onerror=function(e){console.log(e.data);};
