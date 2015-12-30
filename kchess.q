@@ -1,5 +1,5 @@
 ent:([]conn:();cla:();hp:();e:();lx:();ly:();chan:();team:();stat:()); class:([cla:`N`B`R`K`P`Q`W`U]mhp:20 10 40 15 15 10 50 10); teams:(0 5;10 5); lt:turns:()()!""""; effects:()
-dist:{sqrt sum(x-y)xexp 2}; intersect:{0=((y 0)*(x 1)%x 0)-y 1}; inrange:{dist[y;raze value exec lx,ly from ent where conn=x]<=z}; emptyxy:{null first exec i from ent where lx=x 0,ly=x 1}
+dist:{sqrt sum(x-y)xexp 2}; inrange:{dist[y;raze value exec lx,ly from ent where conn=x]<=z}; emptyxy:{null first exec i from ent where lx=x 0,ly=x 1}
 intersect:{$[(x 0)=y 0;1b;0=((y 0)*(x 1)%x 0)-y 1]} / Requires origin-based input; e.g., intersect[target-me;unit-me]
 dt:{turns _:x} / Delete turn - used when usage conditions not met
 xy:{value exec lx,ly from ent where conn=x 0,e>=x 1,cla=x 2}
